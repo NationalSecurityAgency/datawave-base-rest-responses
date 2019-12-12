@@ -1,7 +1,9 @@
 package datawave.webservice.query.exception;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class NotFoundQueryExceptionTest {
     
@@ -18,108 +20,108 @@ public class NotFoundQueryExceptionTest {
     @Test
     public void testEmptyConstructor() {
         nfqe = new NotFoundQueryException();
-        Assert.assertEquals(500, nfqe.getStatusCode());
-        Assert.assertEquals("500-1", nfqe.getErrorCode());
-        Assert.assertNull(nfqe.getMessage());
-        Assert.assertNull(nfqe.getLocalizedMessage());
+        assertEquals(500, nfqe.getStatusCode());
+        assertEquals("500-1", nfqe.getErrorCode());
+        assertNull(nfqe.getMessage());
+        assertNull(nfqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageConstructor() {
         nfqe = new NotFoundQueryException(message);
-        Assert.assertEquals(500, nfqe.getStatusCode());
-        Assert.assertEquals("500-1", nfqe.getErrorCode());
-        Assert.assertEquals(message, nfqe.getMessage());
-        Assert.assertEquals(message, nfqe.getLocalizedMessage());
+        assertEquals(500, nfqe.getStatusCode());
+        assertEquals("500-1", nfqe.getErrorCode());
+        assertEquals(message, nfqe.getMessage());
+        assertEquals(message, nfqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageThrowableConstructor() {
         nfqe = new NotFoundQueryException(message, throwable);
-        Assert.assertEquals(500, nfqe.getStatusCode());
-        Assert.assertEquals("500-1", nfqe.getErrorCode());
-        Assert.assertEquals(message, nfqe.getMessage());
-        Assert.assertEquals(message, nfqe.getLocalizedMessage());
+        assertEquals(500, nfqe.getStatusCode());
+        assertEquals("500-1", nfqe.getErrorCode());
+        assertEquals(message, nfqe.getMessage());
+        assertEquals(message, nfqe.getLocalizedMessage());
     }
     
     @Test
     public void testThrowableErrorCodeConstructor() {
         nfqe = new NotFoundQueryException(throwable, strErrCode);
-        Assert.assertEquals(204, nfqe.getStatusCode());
-        Assert.assertEquals("204-5", nfqe.getErrorCode());
-        Assert.assertEquals(throwable.toString(), nfqe.getMessage());
-        Assert.assertEquals(throwable.toString(), nfqe.getLocalizedMessage());
+        assertEquals(204, nfqe.getStatusCode());
+        assertEquals("204-5", nfqe.getErrorCode());
+        assertEquals(throwable.toString(), nfqe.getMessage());
+        assertEquals(throwable.toString(), nfqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeThrowableConstructor() {
         nfqe = new NotFoundQueryException(code, throwable);
-        Assert.assertEquals(404, nfqe.getStatusCode());
-        Assert.assertEquals("404-6", nfqe.getErrorCode());
-        Assert.assertEquals(assertMsg2, nfqe.getMessage());
-        Assert.assertEquals(assertMsg2, nfqe.getLocalizedMessage());
+        assertEquals(404, nfqe.getStatusCode());
+        assertEquals("404-6", nfqe.getErrorCode());
+        assertEquals(assertMsg2, nfqe.getMessage());
+        assertEquals(assertMsg2, nfqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeDebugMsgConstructor() {
         nfqe = new NotFoundQueryException(code, message);
-        Assert.assertEquals(404, nfqe.getStatusCode());
-        Assert.assertEquals("404-6", nfqe.getErrorCode());
-        Assert.assertEquals(assertMsg, nfqe.getMessage());
-        Assert.assertEquals(assertMsg, nfqe.getLocalizedMessage());
+        assertEquals(404, nfqe.getStatusCode());
+        assertEquals("404-6", nfqe.getErrorCode());
+        assertEquals(assertMsg, nfqe.getMessage());
+        assertEquals(assertMsg, nfqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeThrowableDebugMsgConstructor() {
         nfqe = new NotFoundQueryException(code, throwable, message);
-        Assert.assertEquals(404, nfqe.getStatusCode());
-        Assert.assertEquals("404-6", nfqe.getErrorCode());
-        Assert.assertEquals(assertMsg, nfqe.getMessage());
-        Assert.assertEquals(assertMsg, nfqe.getLocalizedMessage());
+        assertEquals(404, nfqe.getStatusCode());
+        assertEquals("404-6", nfqe.getErrorCode());
+        assertEquals(assertMsg, nfqe.getMessage());
+        assertEquals(assertMsg, nfqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeConstructor() {
         nfqe = new NotFoundQueryException(code);
-        Assert.assertEquals(404, nfqe.getStatusCode());
-        Assert.assertEquals("404-6", nfqe.getErrorCode());
-        Assert.assertEquals(assertMsg2, nfqe.getMessage());
-        Assert.assertEquals(assertMsg2, nfqe.getLocalizedMessage());
+        assertEquals(404, nfqe.getStatusCode());
+        assertEquals("404-6", nfqe.getErrorCode());
+        assertEquals(assertMsg2, nfqe.getMessage());
+        assertEquals(assertMsg2, nfqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageResponseStatus() {
         nfqe = new NotFoundQueryException(message, 404);
-        Assert.assertEquals(404, nfqe.getStatusCode());
-        Assert.assertEquals("404", nfqe.getErrorCode());
-        Assert.assertEquals(message, nfqe.getMessage());
-        Assert.assertEquals(message, nfqe.getLocalizedMessage());
+        assertEquals(404, nfqe.getStatusCode());
+        assertEquals("404", nfqe.getErrorCode());
+        assertEquals(message, nfqe.getMessage());
+        assertEquals(message, nfqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageThrowableErrorCode() {
         nfqe = new NotFoundQueryException(message, throwable, strErrCode);
-        Assert.assertEquals(204, nfqe.getStatusCode());
-        Assert.assertEquals("204-5", nfqe.getErrorCode());
-        Assert.assertEquals(message, nfqe.getMessage());
-        Assert.assertEquals(message, nfqe.getLocalizedMessage());
+        assertEquals(204, nfqe.getStatusCode());
+        assertEquals("204-5", nfqe.getErrorCode());
+        assertEquals(message, nfqe.getMessage());
+        assertEquals(message, nfqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageErrorCode() {
         nfqe = new NotFoundQueryException(message, strErrCode);
-        Assert.assertEquals(204, nfqe.getStatusCode());
-        Assert.assertEquals("204-5", nfqe.getErrorCode());
-        Assert.assertEquals(message, nfqe.getMessage());
-        Assert.assertEquals(message, nfqe.getLocalizedMessage());
+        assertEquals(204, nfqe.getStatusCode());
+        assertEquals("204-5", nfqe.getErrorCode());
+        assertEquals(message, nfqe.getMessage());
+        assertEquals(message, nfqe.getLocalizedMessage());
     }
     
     @Test
     public void testThrowable() {
         nfqe = new NotFoundQueryException(throwable);
-        Assert.assertEquals(500, nfqe.getStatusCode());
-        Assert.assertEquals("500-1", nfqe.getErrorCode());
-        Assert.assertEquals(throwable.toString(), nfqe.getMessage());
-        Assert.assertEquals(throwable.toString(), nfqe.getLocalizedMessage());
+        assertEquals(500, nfqe.getStatusCode());
+        assertEquals("500-1", nfqe.getErrorCode());
+        assertEquals(throwable.toString(), nfqe.getMessage());
+        assertEquals(throwable.toString(), nfqe.getLocalizedMessage());
     }
 }

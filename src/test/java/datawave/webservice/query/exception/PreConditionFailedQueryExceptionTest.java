@@ -1,7 +1,9 @@
 package datawave.webservice.query.exception;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class PreConditionFailedQueryExceptionTest {
     
@@ -18,108 +20,108 @@ public class PreConditionFailedQueryExceptionTest {
     @Test
     public void testEmptyConstructor() {
         brqe = new PreConditionFailedQueryException();
-        Assert.assertEquals(500, brqe.getStatusCode());
-        Assert.assertEquals("500-1", brqe.getErrorCode());
-        Assert.assertNull(brqe.getMessage());
-        Assert.assertNull(brqe.getLocalizedMessage());
+        assertEquals(500, brqe.getStatusCode());
+        assertEquals("500-1", brqe.getErrorCode());
+        assertNull(brqe.getMessage());
+        assertNull(brqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageConstructor() {
         brqe = new PreConditionFailedQueryException(message);
-        Assert.assertEquals(500, brqe.getStatusCode());
-        Assert.assertEquals("500-1", brqe.getErrorCode());
-        Assert.assertEquals(message, brqe.getMessage());
-        Assert.assertEquals(message, brqe.getLocalizedMessage());
+        assertEquals(500, brqe.getStatusCode());
+        assertEquals("500-1", brqe.getErrorCode());
+        assertEquals(message, brqe.getMessage());
+        assertEquals(message, brqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageThrowableConstructor() {
         brqe = new PreConditionFailedQueryException(message, throwable);
-        Assert.assertEquals(500, brqe.getStatusCode());
-        Assert.assertEquals("500-1", brqe.getErrorCode());
-        Assert.assertEquals(message, brqe.getMessage());
-        Assert.assertEquals(message, brqe.getLocalizedMessage());
+        assertEquals(500, brqe.getStatusCode());
+        assertEquals("500-1", brqe.getErrorCode());
+        assertEquals(message, brqe.getMessage());
+        assertEquals(message, brqe.getLocalizedMessage());
     }
     
     @Test
     public void testThrowableErrorCodeConstructor() {
         brqe = new PreConditionFailedQueryException(throwable, strErrCode);
-        Assert.assertEquals(412, brqe.getStatusCode());
-        Assert.assertEquals("412-10", brqe.getErrorCode());
-        Assert.assertEquals(throwable.toString(), brqe.getMessage());
-        Assert.assertEquals(throwable.toString(), brqe.getLocalizedMessage());
+        assertEquals(412, brqe.getStatusCode());
+        assertEquals("412-10", brqe.getErrorCode());
+        assertEquals(throwable.toString(), brqe.getMessage());
+        assertEquals(throwable.toString(), brqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeThrowableConstructor() {
         brqe = new PreConditionFailedQueryException(code, throwable);
-        Assert.assertEquals(412, brqe.getStatusCode());
-        Assert.assertEquals("412-10", brqe.getErrorCode());
-        Assert.assertEquals(assertMsg2, brqe.getMessage());
-        Assert.assertEquals(assertMsg2, brqe.getLocalizedMessage());
+        assertEquals(412, brqe.getStatusCode());
+        assertEquals("412-10", brqe.getErrorCode());
+        assertEquals(assertMsg2, brqe.getMessage());
+        assertEquals(assertMsg2, brqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeDebugMsgConstructor() {
         brqe = new PreConditionFailedQueryException(code, message);
-        Assert.assertEquals(412, brqe.getStatusCode());
-        Assert.assertEquals("412-10", brqe.getErrorCode());
-        Assert.assertEquals(assertMsg, brqe.getMessage());
-        Assert.assertEquals(assertMsg, brqe.getLocalizedMessage());
+        assertEquals(412, brqe.getStatusCode());
+        assertEquals("412-10", brqe.getErrorCode());
+        assertEquals(assertMsg, brqe.getMessage());
+        assertEquals(assertMsg, brqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeThrowableDebugMsgConstructor() {
         brqe = new PreConditionFailedQueryException(code, throwable, message);
-        Assert.assertEquals(412, brqe.getStatusCode());
-        Assert.assertEquals("412-10", brqe.getErrorCode());
-        Assert.assertEquals(assertMsg, brqe.getMessage());
-        Assert.assertEquals(assertMsg, brqe.getLocalizedMessage());
+        assertEquals(412, brqe.getStatusCode());
+        assertEquals("412-10", brqe.getErrorCode());
+        assertEquals(assertMsg, brqe.getMessage());
+        assertEquals(assertMsg, brqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeConstructor() {
         brqe = new PreConditionFailedQueryException(code);
-        Assert.assertEquals(412, brqe.getStatusCode());
-        Assert.assertEquals("412-10", brqe.getErrorCode());
-        Assert.assertEquals(assertMsg2, brqe.getMessage());
-        Assert.assertEquals(assertMsg2, brqe.getLocalizedMessage());
+        assertEquals(412, brqe.getStatusCode());
+        assertEquals("412-10", brqe.getErrorCode());
+        assertEquals(assertMsg2, brqe.getMessage());
+        assertEquals(assertMsg2, brqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageResponseStatus() {
         brqe = new PreConditionFailedQueryException(message, 412);
-        Assert.assertEquals(412, brqe.getStatusCode());
-        Assert.assertEquals("412", brqe.getErrorCode());
-        Assert.assertEquals(message, brqe.getMessage());
-        Assert.assertEquals(message, brqe.getLocalizedMessage());
+        assertEquals(412, brqe.getStatusCode());
+        assertEquals("412", brqe.getErrorCode());
+        assertEquals(message, brqe.getMessage());
+        assertEquals(message, brqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageThrowableErrorCode() {
         brqe = new PreConditionFailedQueryException(message, throwable, strErrCode);
-        Assert.assertEquals(412, brqe.getStatusCode());
-        Assert.assertEquals("412-10", brqe.getErrorCode());
-        Assert.assertEquals(message, brqe.getMessage());
-        Assert.assertEquals(message, brqe.getLocalizedMessage());
+        assertEquals(412, brqe.getStatusCode());
+        assertEquals("412-10", brqe.getErrorCode());
+        assertEquals(message, brqe.getMessage());
+        assertEquals(message, brqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageErrorCode() {
         brqe = new PreConditionFailedQueryException(message, strErrCode);
-        Assert.assertEquals(412, brqe.getStatusCode());
-        Assert.assertEquals("412-10", brqe.getErrorCode());
-        Assert.assertEquals(message, brqe.getMessage());
-        Assert.assertEquals(message, brqe.getLocalizedMessage());
+        assertEquals(412, brqe.getStatusCode());
+        assertEquals("412-10", brqe.getErrorCode());
+        assertEquals(message, brqe.getMessage());
+        assertEquals(message, brqe.getLocalizedMessage());
     }
     
     @Test
     public void testThrowable() {
         brqe = new PreConditionFailedQueryException(throwable);
-        Assert.assertEquals(500, brqe.getStatusCode());
-        Assert.assertEquals("500-1", brqe.getErrorCode());
-        Assert.assertEquals(throwable.toString(), brqe.getMessage());
-        Assert.assertEquals(throwable.toString(), brqe.getLocalizedMessage());
+        assertEquals(500, brqe.getStatusCode());
+        assertEquals("500-1", brqe.getErrorCode());
+        assertEquals(throwable.toString(), brqe.getMessage());
+        assertEquals(throwable.toString(), brqe.getLocalizedMessage());
     }
 }

@@ -1,8 +1,9 @@
 package datawave.webservice.query.result.util.protostuff;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class ProtostuffFieldTest {
     
@@ -68,9 +69,9 @@ public class ProtostuffFieldTest {
         assertEquals(FIELD_BASE.BFIELD, FIELD.parseFieldName("bField"));
     }
     
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testInvalidEnum() {
         // this should throw because BAD_BASE doesn't contain a 0 index
-        new ProtostuffField<>(BAD_BASE.class);
+        assertThrows(IllegalArgumentException.class, () -> new ProtostuffField<>(BAD_BASE.class));
     }
 }
