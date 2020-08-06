@@ -21,6 +21,9 @@ public abstract class BaseResponse implements Serializable {
     
     private static final long serialVersionUID = 1L;
     
+    @XmlElement(name = "QueryId")
+    private String queryId = null;
+    
     @XmlElement(name = "OperationTimeMS")
     private long operationTimeMS = 0;
     
@@ -33,6 +36,14 @@ public abstract class BaseResponse implements Serializable {
     @XmlElementWrapper(name = "Exceptions")
     @XmlElement(name = "Exception")
     private LinkedList<QueryExceptionType> exceptions = null;
+    
+    public String getQueryId() {
+        return queryId;
+    }
+    
+    public void setQueryId(String queryId) {
+        this.queryId = queryId;
+    }
     
     public long getOperationTimeMS() {
         return operationTimeMS;
