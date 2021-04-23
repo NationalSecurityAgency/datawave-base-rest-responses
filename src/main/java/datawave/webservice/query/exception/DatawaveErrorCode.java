@@ -217,9 +217,11 @@ public enum DatawaveErrorCode {
     INVALID_PAGE_TIMEOUT(400, 41, "Invalid page timeout."),
     BEGIN_DATE_AFTER_END_DATE(400, 42, "The begin date occurs after the end date."),
     INVALID_MAX_RESULTS_OVERRIDE(400, 43, "Invalid max results override value."),
+    INVALID_MAX_CONCURRENT_TASKS_OVERRIDE(400, 44, "Invalid max concurrent tasks override value."),
     // 401 Unauthorized
     QUERY_OWNER_MISMATCH(401, 1, "Current user does not match user that defined query."),
     JOB_EXECUTION_UNAUTHORIZED(401, 2, "User not authorized to run this job."),
+    MISSING_REQUIRED_ROLES(401, 3, "User does not have the required roles."),
     // 404 Not Found
     NO_QUERY_OBJECT_MATCH(404, 1, "No query object matches this id."),
     TOO_MANY_QUERY_OBJECT_MATCHES(404, 2, "More than one query object matches this id."),
