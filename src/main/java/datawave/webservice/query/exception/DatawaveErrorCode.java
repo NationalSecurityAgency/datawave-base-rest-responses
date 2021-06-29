@@ -263,7 +263,7 @@ public enum DatawaveErrorCode {
     QUERY_TERM_THRESHOLD_EXCEEDED(412, 10, "Query failed because it exceeded the query term threshold."),
     FULL_TABLE_SCAN_REQUIRED_BUT_DISABLED(412, 11, "Full table scan required but not enabled.  Cannot run query."),
     IGNORE_PATTERN_FOR_INDEX_LOOKUP(412, 12, "Ignoring pattern for index lookup because it is disallowed"),
-    WILDCARDS_BOTH_SIDES(412, 13, "Found wildcards on boths sides of a term and full table scan is disabled"),
+    WILDCARDS_BOTH_SIDES(412, 13, "Found wildcards on both sides of a term and full table scan is disabled"),
     EQUALS_NODE_TWO_LITERALS(412, 14, "Cannot process an equals node with two literals."),
     FIELD_NOT_INDEXED(412, 15, "Field name is is not indexed. Query cannot be run as an index query."),
     CURRENT_AND_PREVIOUS_EVENT_ORDER_INVALID(412, 16, "Current event and previous event are not in chronological order"),
