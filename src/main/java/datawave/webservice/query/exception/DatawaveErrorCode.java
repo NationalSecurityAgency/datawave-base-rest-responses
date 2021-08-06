@@ -174,6 +174,7 @@ public enum DatawaveErrorCode {
     QUERY_CANCELED(204, 3, "Query was canceled."),
     EMPTY_FIELD_MAP(204, 4, "Field map is empty."),
     NO_CONTENT_STATUS(204, 5, "Status indicates no content."),
+    NO_QUERY_RESULTS_FOUND(204, 6, "No results found for query."),
     // 400 Bad Request
     QUERY_NAME_REQUIRED(400, 1, "Param queryName is required."),
     INVALID_PAGE_SIZE(400, 2, "Invalid page size."),
@@ -226,7 +227,6 @@ public enum DatawaveErrorCode {
     NO_QUERY_OBJECT_MATCH(404, 1, "No query object matches this id."),
     TOO_MANY_QUERY_OBJECT_MATCHES(404, 2, "More than one query object matches this id."),
     INVALID_QUERY_ID(404, 3, "Invalid query id."),
-    NO_QUERY_RESULTS_FOUND(404, 4, "No results found for query."),
     CACHED_RESULT_NOT_FOUND(404, 5, "CachedResult not found."),
     QUERY_OR_VIEW_NOT_FOUND(404, 6, "Query/view not found."),
     VIEW_NOT_FOUND(404, 7, "View not found."),
