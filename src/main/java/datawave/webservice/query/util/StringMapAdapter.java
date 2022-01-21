@@ -16,8 +16,10 @@ public class StringMapAdapter extends XmlAdapter<StringMapAdapter.StringMap,Map<
     @Override
     public Map<String,String> unmarshal(StringMap v) throws Exception {
         HashMap<String,String> map = new HashMap<String,String>();
-        for (StringMapEntry entry : v.entries) {
-            map.put(entry.key, entry.value);
+        if (v != null) {
+            for (StringMapEntry entry : v.entries) {
+                map.put(entry.key, entry.value);
+            }
         }
         return map;
     }
@@ -25,8 +27,10 @@ public class StringMapAdapter extends XmlAdapter<StringMapAdapter.StringMap,Map<
     @Override
     public StringMap marshal(Map<String,String> v) throws Exception {
         StringMap map = new StringMap();
-        for (Map.Entry<String,String> entry : v.entrySet()) {
-            map.entries.add(new StringMapEntry(entry.getKey(), entry.getValue()));
+        if (v != null) {
+            for (Map.Entry<String,String> entry : v.entrySet()) {
+                map.entries.add(new StringMapEntry(entry.getKey(), entry.getValue()));
+            }
         }
         return map;
     }
