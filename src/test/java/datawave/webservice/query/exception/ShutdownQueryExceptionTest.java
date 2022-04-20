@@ -1,7 +1,7 @@
 package datawave.webservice.query.exception;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class ShutdownQueryExceptionTest {
     
@@ -18,108 +18,108 @@ public class ShutdownQueryExceptionTest {
     @Test
     public void testEmptyConstructor() {
         sqe = new ShutdownQueryException();
-        Assert.assertEquals(500, sqe.getStatusCode());
-        Assert.assertEquals("500-1", sqe.getErrorCode());
-        Assert.assertNull(sqe.getMessage());
-        Assert.assertNull(sqe.getLocalizedMessage());
+        Assertions.assertEquals(500, sqe.getStatusCode());
+        Assertions.assertEquals("500-1", sqe.getErrorCode());
+        Assertions.assertNull(sqe.getMessage());
+        Assertions.assertNull(sqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageConstructor() {
         sqe = new ShutdownQueryException(message);
-        Assert.assertEquals(500, sqe.getStatusCode());
-        Assert.assertEquals("500-1", sqe.getErrorCode());
-        Assert.assertEquals(message, sqe.getMessage());
-        Assert.assertEquals(message, sqe.getLocalizedMessage());
+        Assertions.assertEquals(500, sqe.getStatusCode());
+        Assertions.assertEquals("500-1", sqe.getErrorCode());
+        Assertions.assertEquals(message, sqe.getMessage());
+        Assertions.assertEquals(message, sqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageThrowableConstructor() {
         sqe = new ShutdownQueryException(message, throwable);
-        Assert.assertEquals(500, sqe.getStatusCode());
-        Assert.assertEquals("500-1", sqe.getErrorCode());
-        Assert.assertEquals(message, sqe.getMessage());
-        Assert.assertEquals(message, sqe.getLocalizedMessage());
+        Assertions.assertEquals(500, sqe.getStatusCode());
+        Assertions.assertEquals("500-1", sqe.getErrorCode());
+        Assertions.assertEquals(message, sqe.getMessage());
+        Assertions.assertEquals(message, sqe.getLocalizedMessage());
     }
     
     @Test
     public void testThrowableErrorCodeConstructor() {
         sqe = new ShutdownQueryException(throwable, strErrCode);
-        Assert.assertEquals(500, sqe.getStatusCode());
-        Assert.assertEquals("500-26", sqe.getErrorCode());
-        Assert.assertEquals(throwable.toString(), sqe.getMessage());
-        Assert.assertEquals(throwable.toString(), sqe.getLocalizedMessage());
+        Assertions.assertEquals(500, sqe.getStatusCode());
+        Assertions.assertEquals("500-26", sqe.getErrorCode());
+        Assertions.assertEquals(throwable.toString(), sqe.getMessage());
+        Assertions.assertEquals(throwable.toString(), sqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeThrowableConstructor() {
         sqe = new ShutdownQueryException(code, throwable);
-        Assert.assertEquals(500, sqe.getStatusCode());
-        Assert.assertEquals("500-26", sqe.getErrorCode());
-        Assert.assertEquals(assertMsg2, sqe.getMessage());
-        Assert.assertEquals(assertMsg2, sqe.getLocalizedMessage());
+        Assertions.assertEquals(500, sqe.getStatusCode());
+        Assertions.assertEquals("500-26", sqe.getErrorCode());
+        Assertions.assertEquals(assertMsg2, sqe.getMessage());
+        Assertions.assertEquals(assertMsg2, sqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeDebugMsgConstructor() {
         sqe = new ShutdownQueryException(code, message);
-        Assert.assertEquals(500, sqe.getStatusCode());
-        Assert.assertEquals("500-26", sqe.getErrorCode());
-        Assert.assertEquals(assertMsg, sqe.getMessage());
-        Assert.assertEquals(assertMsg, sqe.getLocalizedMessage());
+        Assertions.assertEquals(500, sqe.getStatusCode());
+        Assertions.assertEquals("500-26", sqe.getErrorCode());
+        Assertions.assertEquals(assertMsg, sqe.getMessage());
+        Assertions.assertEquals(assertMsg, sqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeThrowableDebugMsgConstructor() {
         sqe = new ShutdownQueryException(code, throwable, message);
-        Assert.assertEquals(500, sqe.getStatusCode());
-        Assert.assertEquals("500-26", sqe.getErrorCode());
-        Assert.assertEquals(assertMsg, sqe.getMessage());
-        Assert.assertEquals(assertMsg, sqe.getLocalizedMessage());
+        Assertions.assertEquals(500, sqe.getStatusCode());
+        Assertions.assertEquals("500-26", sqe.getErrorCode());
+        Assertions.assertEquals(assertMsg, sqe.getMessage());
+        Assertions.assertEquals(assertMsg, sqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeConstructor() {
         sqe = new ShutdownQueryException(code);
-        Assert.assertEquals(500, sqe.getStatusCode());
-        Assert.assertEquals("500-26", sqe.getErrorCode());
-        Assert.assertEquals(assertMsg2, sqe.getMessage());
-        Assert.assertEquals(assertMsg2, sqe.getLocalizedMessage());
+        Assertions.assertEquals(500, sqe.getStatusCode());
+        Assertions.assertEquals("500-26", sqe.getErrorCode());
+        Assertions.assertEquals(assertMsg2, sqe.getMessage());
+        Assertions.assertEquals(assertMsg2, sqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageResponseStatus() {
         sqe = new ShutdownQueryException(message, 500);
-        Assert.assertEquals(500, sqe.getStatusCode());
-        Assert.assertEquals("500", sqe.getErrorCode());
-        Assert.assertEquals(message, sqe.getMessage());
-        Assert.assertEquals(message, sqe.getLocalizedMessage());
+        Assertions.assertEquals(500, sqe.getStatusCode());
+        Assertions.assertEquals("500", sqe.getErrorCode());
+        Assertions.assertEquals(message, sqe.getMessage());
+        Assertions.assertEquals(message, sqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageThrowableErrorCode() {
         sqe = new ShutdownQueryException(message, throwable, strErrCode);
-        Assert.assertEquals(500, sqe.getStatusCode());
-        Assert.assertEquals("500-26", sqe.getErrorCode());
-        Assert.assertEquals(message, sqe.getMessage());
-        Assert.assertEquals(message, sqe.getLocalizedMessage());
+        Assertions.assertEquals(500, sqe.getStatusCode());
+        Assertions.assertEquals("500-26", sqe.getErrorCode());
+        Assertions.assertEquals(message, sqe.getMessage());
+        Assertions.assertEquals(message, sqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageErrorCode() {
         sqe = new ShutdownQueryException(message, strErrCode);
-        Assert.assertEquals(500, sqe.getStatusCode());
-        Assert.assertEquals("500-26", sqe.getErrorCode());
-        Assert.assertEquals(message, sqe.getMessage());
-        Assert.assertEquals(message, sqe.getLocalizedMessage());
+        Assertions.assertEquals(500, sqe.getStatusCode());
+        Assertions.assertEquals("500-26", sqe.getErrorCode());
+        Assertions.assertEquals(message, sqe.getMessage());
+        Assertions.assertEquals(message, sqe.getLocalizedMessage());
     }
     
     @Test
     public void testThrowable() {
         sqe = new ShutdownQueryException(throwable);
-        Assert.assertEquals(500, sqe.getStatusCode());
-        Assert.assertEquals("500-1", sqe.getErrorCode());
-        Assert.assertEquals(throwable.toString(), sqe.getMessage());
-        Assert.assertEquals(throwable.toString(), sqe.getLocalizedMessage());
+        Assertions.assertEquals(500, sqe.getStatusCode());
+        Assertions.assertEquals("500-1", sqe.getErrorCode());
+        Assertions.assertEquals(throwable.toString(), sqe.getMessage());
+        Assertions.assertEquals(throwable.toString(), sqe.getLocalizedMessage());
     }
 }

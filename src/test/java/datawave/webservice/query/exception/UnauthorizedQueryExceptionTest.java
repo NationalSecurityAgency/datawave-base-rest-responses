@@ -1,7 +1,7 @@
 package datawave.webservice.query.exception;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class UnauthorizedQueryExceptionTest {
     
@@ -18,109 +18,109 @@ public class UnauthorizedQueryExceptionTest {
     @Test
     public void testEmptyConstructor() {
         tqe = new UnauthorizedQueryException();
-        Assert.assertEquals(500, tqe.getStatusCode());
-        Assert.assertEquals("500-1", tqe.getErrorCode());
-        Assert.assertNull(tqe.getMessage());
-        Assert.assertNull(tqe.getLocalizedMessage());
+        Assertions.assertEquals(500, tqe.getStatusCode());
+        Assertions.assertEquals("500-1", tqe.getErrorCode());
+        Assertions.assertNull(tqe.getMessage());
+        Assertions.assertNull(tqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageConstructor() {
         tqe = new UnauthorizedQueryException(message);
-        Assert.assertEquals(500, tqe.getStatusCode());
-        Assert.assertEquals("500-1", tqe.getErrorCode());
-        Assert.assertEquals(message, tqe.getMessage());
-        Assert.assertEquals(message, tqe.getLocalizedMessage());
+        Assertions.assertEquals(500, tqe.getStatusCode());
+        Assertions.assertEquals("500-1", tqe.getErrorCode());
+        Assertions.assertEquals(message, tqe.getMessage());
+        Assertions.assertEquals(message, tqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageThrowableConstructor() {
         tqe = new UnauthorizedQueryException(message, throwable);
-        Assert.assertEquals(500, tqe.getStatusCode());
-        Assert.assertEquals("500-1", tqe.getErrorCode());
-        Assert.assertEquals(message, tqe.getMessage());
-        Assert.assertEquals(message, tqe.getLocalizedMessage());
+        Assertions.assertEquals(500, tqe.getStatusCode());
+        Assertions.assertEquals("500-1", tqe.getErrorCode());
+        Assertions.assertEquals(message, tqe.getMessage());
+        Assertions.assertEquals(message, tqe.getLocalizedMessage());
     }
     
     @Test
     public void testThrowableErrorCodeConstructor() {
         tqe = new UnauthorizedQueryException(throwable, strErrCode);
-        Assert.assertEquals(401, tqe.getStatusCode());
-        Assert.assertEquals("401-1", tqe.getErrorCode());
-        Assert.assertEquals(throwable.toString(), tqe.getMessage());
-        Assert.assertEquals(throwable.toString(), tqe.getLocalizedMessage());
+        Assertions.assertEquals(401, tqe.getStatusCode());
+        Assertions.assertEquals("401-1", tqe.getErrorCode());
+        Assertions.assertEquals(throwable.toString(), tqe.getMessage());
+        Assertions.assertEquals(throwable.toString(), tqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeThrowableConstructor() {
         tqe = new UnauthorizedQueryException(code, throwable);
-        Assert.assertEquals(401, tqe.getStatusCode());
-        Assert.assertEquals("401-1", tqe.getErrorCode());
-        Assert.assertEquals(assertMsg2, tqe.getMessage());
-        Assert.assertEquals(assertMsg2, tqe.getLocalizedMessage());
+        Assertions.assertEquals(401, tqe.getStatusCode());
+        Assertions.assertEquals("401-1", tqe.getErrorCode());
+        Assertions.assertEquals(assertMsg2, tqe.getMessage());
+        Assertions.assertEquals(assertMsg2, tqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeDebugMsgConstructor() {
         tqe = new UnauthorizedQueryException(code, message);
-        Assert.assertEquals(401, tqe.getStatusCode());
-        Assert.assertEquals("401-1", tqe.getErrorCode());
-        Assert.assertEquals(assertMsg, tqe.getMessage());
-        Assert.assertEquals(assertMsg, tqe.getLocalizedMessage());
+        Assertions.assertEquals(401, tqe.getStatusCode());
+        Assertions.assertEquals("401-1", tqe.getErrorCode());
+        Assertions.assertEquals(assertMsg, tqe.getMessage());
+        Assertions.assertEquals(assertMsg, tqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeThrowableDebugMsgConstructor() {
         tqe = new UnauthorizedQueryException(code, throwable, message);
-        Assert.assertEquals(401, tqe.getStatusCode());
-        Assert.assertEquals("401-1", tqe.getErrorCode());
-        Assert.assertEquals(assertMsg, tqe.getMessage());
-        Assert.assertEquals(assertMsg, tqe.getLocalizedMessage());
+        Assertions.assertEquals(401, tqe.getStatusCode());
+        Assertions.assertEquals("401-1", tqe.getErrorCode());
+        Assertions.assertEquals(assertMsg, tqe.getMessage());
+        Assertions.assertEquals(assertMsg, tqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeConstructor() {
         tqe = new UnauthorizedQueryException(code);
-        Assert.assertEquals(401, tqe.getStatusCode());
-        Assert.assertEquals("401-1", tqe.getErrorCode());
-        Assert.assertEquals(assertMsg2, tqe.getMessage());
-        Assert.assertEquals(assertMsg2, tqe.getLocalizedMessage());
+        Assertions.assertEquals(401, tqe.getStatusCode());
+        Assertions.assertEquals("401-1", tqe.getErrorCode());
+        Assertions.assertEquals(assertMsg2, tqe.getMessage());
+        Assertions.assertEquals(assertMsg2, tqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageResponseStatus() {
         tqe = new UnauthorizedQueryException(message, 401);
-        Assert.assertEquals(401, tqe.getStatusCode());
-        Assert.assertEquals("401", tqe.getErrorCode());
-        Assert.assertEquals(message, tqe.getMessage());
-        Assert.assertEquals(message, tqe.getLocalizedMessage());
+        Assertions.assertEquals(401, tqe.getStatusCode());
+        Assertions.assertEquals("401", tqe.getErrorCode());
+        Assertions.assertEquals(message, tqe.getMessage());
+        Assertions.assertEquals(message, tqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageThrowableErrorCode() {
         tqe = new UnauthorizedQueryException(message, throwable, strErrCode);
-        Assert.assertEquals(401, tqe.getStatusCode());
-        Assert.assertEquals("401-1", tqe.getErrorCode());
-        Assert.assertEquals(message, tqe.getMessage());
-        Assert.assertEquals(message, tqe.getLocalizedMessage());
+        Assertions.assertEquals(401, tqe.getStatusCode());
+        Assertions.assertEquals("401-1", tqe.getErrorCode());
+        Assertions.assertEquals(message, tqe.getMessage());
+        Assertions.assertEquals(message, tqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageErrorCode() {
         tqe = new UnauthorizedQueryException(message, strErrCode);
-        Assert.assertEquals(401, tqe.getStatusCode());
-        Assert.assertEquals("401-1", tqe.getErrorCode());
-        Assert.assertEquals(message, tqe.getMessage());
-        Assert.assertEquals(message, tqe.getLocalizedMessage());
+        Assertions.assertEquals(401, tqe.getStatusCode());
+        Assertions.assertEquals("401-1", tqe.getErrorCode());
+        Assertions.assertEquals(message, tqe.getMessage());
+        Assertions.assertEquals(message, tqe.getLocalizedMessage());
     }
     
     @Test
     public void testThrowable() {
         tqe = new UnauthorizedQueryException(throwable);
-        Assert.assertEquals(500, tqe.getStatusCode());
-        Assert.assertEquals("500-1", tqe.getErrorCode());
-        Assert.assertEquals(throwable.toString(), tqe.getMessage());
-        Assert.assertEquals(throwable.toString(), tqe.getLocalizedMessage());
+        Assertions.assertEquals(500, tqe.getStatusCode());
+        Assertions.assertEquals("500-1", tqe.getErrorCode());
+        Assertions.assertEquals(throwable.toString(), tqe.getMessage());
+        Assertions.assertEquals(throwable.toString(), tqe.getLocalizedMessage());
     }
     
 }

@@ -2,8 +2,8 @@ package datawave.webservice.query.exception;
 
 import java.util.List;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,14 +29,14 @@ public class QueryExceptionTest {
     public void testEmptyConstructor() {
         qe = new QueryException();
         
-        Assert.assertEquals("500-1", qe.getErrorCode());
-        Assert.assertEquals(500, qe.getStatusCode());
-        Assert.assertNull(qe.getLocalizedMessage());
-        Assert.assertNull(qe.getMessage());
-        Assert.assertNull(qe.getCause());
+        Assertions.assertEquals("500-1", qe.getErrorCode());
+        Assertions.assertEquals(500, qe.getStatusCode());
+        Assertions.assertNull(qe.getLocalizedMessage());
+        Assertions.assertNull(qe.getMessage());
+        Assertions.assertNull(qe.getCause());
         
         qe.setErrorCode("99999 of uptime.");
-        Assert.assertEquals("99999 of uptime.", qe.getErrorCode());
+        Assertions.assertEquals("99999 of uptime.", qe.getErrorCode());
     }
     
     /**
@@ -48,11 +48,11 @@ public class QueryExceptionTest {
     public void testMessageConstructor() {
         qe = new QueryException("message");
         
-        Assert.assertEquals("500-1", qe.getErrorCode());
-        Assert.assertEquals(500, qe.getStatusCode());
-        Assert.assertEquals("message", qe.getLocalizedMessage());
-        Assert.assertEquals("message", qe.getMessage());
-        Assert.assertNull(qe.getCause());
+        Assertions.assertEquals("500-1", qe.getErrorCode());
+        Assertions.assertEquals(500, qe.getStatusCode());
+        Assertions.assertEquals("message", qe.getLocalizedMessage());
+        Assertions.assertEquals("message", qe.getMessage());
+        Assertions.assertNull(qe.getCause());
     }
     
     /**
@@ -64,11 +64,11 @@ public class QueryExceptionTest {
     public void testMessageThrowableConstructor() {
         qe = new QueryException("message", throwable);
         
-        Assert.assertEquals("500-1", qe.getErrorCode());
-        Assert.assertEquals(500, qe.getStatusCode());
-        Assert.assertEquals("message", qe.getLocalizedMessage());
-        Assert.assertEquals("message", qe.getMessage());
-        Assert.assertEquals("throws", qe.getCause().getMessage());
+        Assertions.assertEquals("500-1", qe.getErrorCode());
+        Assertions.assertEquals(500, qe.getStatusCode());
+        Assertions.assertEquals("message", qe.getLocalizedMessage());
+        Assertions.assertEquals("message", qe.getMessage());
+        Assertions.assertEquals("throws", qe.getCause().getMessage());
     }
     
     /**
@@ -80,10 +80,10 @@ public class QueryExceptionTest {
     public void testThrowableErrorCodeConstructor() {
         qe = new QueryException(throwable, strErrCode);
         
-        Assert.assertEquals("404-1", qe.getErrorCode());
-        Assert.assertEquals(404, qe.getStatusCode());
-        Assert.assertEquals(throwable.toString(), qe.getLocalizedMessage());
-        Assert.assertEquals(throwable.toString(), qe.getMessage());
+        Assertions.assertEquals("404-1", qe.getErrorCode());
+        Assertions.assertEquals(404, qe.getStatusCode());
+        Assertions.assertEquals(throwable.toString(), qe.getLocalizedMessage());
+        Assertions.assertEquals(throwable.toString(), qe.getMessage());
     }
     
     /**
@@ -95,10 +95,10 @@ public class QueryExceptionTest {
     public void testDatawaveErrorCodeThrowableConstructor() {
         qe = new QueryException(code, throwable);
         
-        Assert.assertEquals("500-50", qe.getErrorCode());
-        Assert.assertEquals(500, qe.getStatusCode());
-        Assert.assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getLocalizedMessage());
-        Assert.assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getMessage());
+        Assertions.assertEquals("500-50", qe.getErrorCode());
+        Assertions.assertEquals(500, qe.getStatusCode());
+        Assertions.assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getLocalizedMessage());
+        Assertions.assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getMessage());
     }
     
     /**
@@ -110,10 +110,10 @@ public class QueryExceptionTest {
     public void testDatawaveErrorCodeDebugMsgConstructor() {
         qe = new QueryException(code, message);
         
-        Assert.assertEquals("500-50", qe.getErrorCode());
-        Assert.assertEquals(500, qe.getStatusCode());
-        Assert.assertEquals(assertMsg, qe.getLocalizedMessage());
-        Assert.assertEquals(assertMsg, qe.getMessage());
+        Assertions.assertEquals("500-50", qe.getErrorCode());
+        Assertions.assertEquals(500, qe.getStatusCode());
+        Assertions.assertEquals(assertMsg, qe.getLocalizedMessage());
+        Assertions.assertEquals(assertMsg, qe.getMessage());
     }
     
     /**
@@ -125,11 +125,11 @@ public class QueryExceptionTest {
     public void testDatawaveErrorCodeThrowableDebugMsgConstructor() {
         qe = new QueryException(code, throwable, message);
         
-        Assert.assertEquals("500-50", qe.getErrorCode());
-        Assert.assertEquals(500, qe.getStatusCode());
-        Assert.assertEquals(assertMsg, qe.getLocalizedMessage());
-        Assert.assertEquals(assertMsg, qe.getMessage());
-        Assert.assertEquals("throws", qe.getCause().getMessage());
+        Assertions.assertEquals("500-50", qe.getErrorCode());
+        Assertions.assertEquals(500, qe.getStatusCode());
+        Assertions.assertEquals(assertMsg, qe.getLocalizedMessage());
+        Assertions.assertEquals(assertMsg, qe.getMessage());
+        Assertions.assertEquals("throws", qe.getCause().getMessage());
         
         // addSuppressed not supported until 1.7. This package is marked to be 1.6 compatible
         // Throwable throwable_2 = new Throwable("throws2");
@@ -143,11 +143,11 @@ public class QueryExceptionTest {
         qe = new QueryException(code, throwable, message);
         
         QueryException bottom = qe.getBottomQueryException();
-        Assert.assertEquals("500-50", bottom.getErrorCode());
-        Assert.assertEquals(assertMsg, bottom.getMessage());
+        Assertions.assertEquals("500-50", bottom.getErrorCode());
+        Assertions.assertEquals(assertMsg, bottom.getMessage());
         
         List<QueryException> qeList = qe.getQueryExceptionsInStack();
-        Assert.assertEquals(1, qeList.size());
+        Assertions.assertEquals(1, qeList.size());
         
     }
     
@@ -160,10 +160,10 @@ public class QueryExceptionTest {
     public void testDatawaveErrorCodeConstructor() {
         qe = new QueryException(code);
         
-        Assert.assertEquals("500-50", qe.getErrorCode());
-        Assert.assertEquals(500, qe.getStatusCode());
-        Assert.assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getLocalizedMessage());
-        Assert.assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getMessage());
+        Assertions.assertEquals("500-50", qe.getErrorCode());
+        Assertions.assertEquals(500, qe.getStatusCode());
+        Assertions.assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getLocalizedMessage());
+        Assertions.assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getMessage());
     }
     
     /**
@@ -175,10 +175,10 @@ public class QueryExceptionTest {
     public void testMessageResponseStatus() {
         qe = new QueryException(message, 202);
         
-        Assert.assertEquals("202", qe.getErrorCode());
-        Assert.assertEquals(202, qe.getStatusCode());
-        Assert.assertEquals("message", qe.getLocalizedMessage());
-        Assert.assertEquals("message", qe.getMessage());
+        Assertions.assertEquals("202", qe.getErrorCode());
+        Assertions.assertEquals(202, qe.getStatusCode());
+        Assertions.assertEquals("message", qe.getLocalizedMessage());
+        Assertions.assertEquals("message", qe.getMessage());
     }
     
     /**
@@ -190,11 +190,11 @@ public class QueryExceptionTest {
     public void testMessageThrowableErrorCode() {
         qe = new QueryException(message, throwable, strErrCode);
         
-        Assert.assertEquals(strErrCode, qe.getErrorCode());
-        Assert.assertEquals(404, qe.getStatusCode());
-        Assert.assertEquals("message", qe.getLocalizedMessage());
-        Assert.assertEquals("message", qe.getMessage());
-        Assert.assertEquals("throws", qe.getCause().getMessage());
+        Assertions.assertEquals(strErrCode, qe.getErrorCode());
+        Assertions.assertEquals(404, qe.getStatusCode());
+        Assertions.assertEquals("message", qe.getLocalizedMessage());
+        Assertions.assertEquals("message", qe.getMessage());
+        Assertions.assertEquals("throws", qe.getCause().getMessage());
     }
     
     /**
@@ -206,10 +206,10 @@ public class QueryExceptionTest {
     public void testMessageErrorCode() {
         qe = new QueryException(message, strErrCode);
         
-        Assert.assertEquals(strErrCode, qe.getErrorCode());
-        Assert.assertEquals(404, qe.getStatusCode());
-        Assert.assertEquals("message", qe.getLocalizedMessage());
-        Assert.assertEquals("message", qe.getMessage());
+        Assertions.assertEquals(strErrCode, qe.getErrorCode());
+        Assertions.assertEquals(404, qe.getStatusCode());
+        Assertions.assertEquals("message", qe.getLocalizedMessage());
+        Assertions.assertEquals("message", qe.getMessage());
     }
     
     /**
@@ -221,10 +221,10 @@ public class QueryExceptionTest {
     public void testThrowable() {
         qe = new QueryException(throwable);
         
-        Assert.assertEquals("500-1", qe.getErrorCode());
-        Assert.assertEquals(500, qe.getStatusCode());
-        Assert.assertEquals(throwable.toString(), qe.getLocalizedMessage());
-        Assert.assertEquals(throwable.toString(), qe.getMessage());
-        Assert.assertEquals("throws", qe.getCause().getMessage());
+        Assertions.assertEquals("500-1", qe.getErrorCode());
+        Assertions.assertEquals(500, qe.getStatusCode());
+        Assertions.assertEquals(throwable.toString(), qe.getLocalizedMessage());
+        Assertions.assertEquals(throwable.toString(), qe.getMessage());
+        Assertions.assertEquals("throws", qe.getCause().getMessage());
     }
 }
