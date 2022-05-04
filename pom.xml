@@ -22,11 +22,8 @@
         <url>https://github.com/NationalSecurityAgency/datawave-base-rest-responses</url>
     </scm>
     <properties>
-        <version.commons-lang3>3.7</version.commons-lang3>
         <version.microservice.accumulo-utils>1.5-SNAPSHOT</version.microservice.accumulo-utils>
         <version.powermock>2.0.0</version.powermock>
-        <version.protostuff>1.6.2</version.protostuff>
-        <version.slf4j>1.7.26</version.slf4j>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -41,27 +38,6 @@
                 <version>${version.protostuff}</version>
             </dependency>
             <dependency>
-                <groupId>jakarta.xml.bind</groupId>
-                <artifactId>jakarta.xml.bind-api</artifactId>
-                <version>${version.jakarta.xml.bind}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>${version.commons-lang3}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${version.slf4j}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.sun.xml.bind</groupId>
-                <artifactId>jaxb-impl</artifactId>
-                <version>${version.sun.xml.bind}</version>
-                <scope>runtime</scope>
-            </dependency>
-            <dependency>
                 <groupId>io.protostuff</groupId>
                 <artifactId>protostuff-core</artifactId>
                 <version>${version.protostuff}</version>
@@ -71,12 +47,6 @@
                 <groupId>org.powermock</groupId>
                 <artifactId>powermock-api-support</artifactId>
                 <version>${version.powermock}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-simple</artifactId>
-                <version>${version.slf4j}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
@@ -93,6 +63,10 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
