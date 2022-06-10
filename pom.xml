@@ -24,6 +24,7 @@
     <properties>
         <version.commons-lang3>3.7</version.commons-lang3>
         <version.microservice.accumulo-utils>1.5-SNAPSHOT</version.microservice.accumulo-utils>
+        <version.microservice.common-utils>1.2-SNAPSHOT</version.microservice.common-utils>
         <version.powermock>2.0.0</version.powermock>
         <version.protostuff>1.6.2</version.protostuff>
         <version.slf4j>1.7.26</version.slf4j>
@@ -34,6 +35,11 @@
                 <groupId>gov.nsa.datawave.microservice</groupId>
                 <artifactId>accumulo-utils</artifactId>
                 <version>${version.microservice.accumulo-utils}</version>
+            </dependency>
+            <dependency>
+                <groupId>gov.nsa.datawave.microservice</groupId>
+                <artifactId>common-utils</artifactId>
+                <version>${version.microservice.common-utils}</version>
             </dependency>
             <dependency>
                 <groupId>io.protostuff</groupId>
@@ -74,6 +80,10 @@
         <dependency>
             <groupId>gov.nsa.datawave.microservice</groupId>
             <artifactId>accumulo-utils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>gov.nsa.datawave.microservice</groupId>
+            <artifactId>common-utils</artifactId>
         </dependency>
         <dependency>
             <groupId>io.protostuff</groupId>
