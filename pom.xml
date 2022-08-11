@@ -22,6 +22,7 @@
         <url>https://github.com/NationalSecurityAgency/datawave-base-rest-responses</url>
     </scm>
     <properties>
+        <datawave.webservice.namespace>http://webservice.datawave/v1</datawave.webservice.namespace>
         <version.commons-lang3>3.7</version.commons-lang3>
         <version.microservice.accumulo-utils>1.5-SNAPSHOT</version.microservice.accumulo-utils>
         <version.microservice.common-utils>1.2-SNAPSHOT</version.microservice.common-utils>
@@ -181,6 +182,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.3.0</version>
                 <executions>
                     <execution>
                         <id>add-source</id>
