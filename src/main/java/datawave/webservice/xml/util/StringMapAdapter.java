@@ -1,4 +1,4 @@
-package datawave.webservice.query.util;
+package datawave.webservice.xml.util;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
