@@ -4,11 +4,11 @@
     <parent>
         <groupId>gov.nsa.datawave.microservice</groupId>
         <artifactId>datawave-microservice-parent</artifactId>
-        <version>1.8</version>
+        <version>1.9-SNAPSHOT</version>
         <relativePath />
     </parent>
     <artifactId>base-rest-responses</artifactId>
-    <version>2.0.1-SNAPSHOT</version>
+    <version>2.1.0-SNAPSHOT</version>
     <url>https://code.nsa.gov/datawave-base-rest-responses</url>
     <licenses>
         <license>
@@ -24,13 +24,19 @@
     </scm>
     <properties>
         <version.commons-lang3>3.9</version.commons-lang3>
-        <version.microservice.accumulo-utils>2.0.0</version.microservice.accumulo-utils>
+        <version.jaxb>2.3.3</version.jaxb>
+        <version.microservice.accumulo-utils>2.1.0</version.microservice.accumulo-utils>
         <version.powermock>2.0.4</version.powermock>
         <version.protostuff>1.6.2</version.protostuff>
         <version.slf4j>1.7.29</version.slf4j>
     </properties>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.sun.xml.bind</groupId>
+                <artifactId>jaxb-impl</artifactId>
+                <version>${version.jaxb}</version>
+            </dependency>
             <dependency>
                 <groupId>gov.nsa.datawave.microservice</groupId>
                 <artifactId>accumulo-utils</artifactId>
@@ -40,6 +46,11 @@
                 <groupId>io.protostuff</groupId>
                 <artifactId>protostuff-api</artifactId>
                 <version>${version.protostuff}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.xml.bind</groupId>
+                <artifactId>jakarta.xml.bind-api</artifactId>
+                <version>${version.jaxb}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -73,12 +84,20 @@
     </dependencyManagement>
     <dependencies>
         <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+        </dependency>
+        <dependency>
             <groupId>gov.nsa.datawave.microservice</groupId>
             <artifactId>accumulo-utils</artifactId>
         </dependency>
         <dependency>
             <groupId>io.protostuff</groupId>
             <artifactId>protostuff-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
