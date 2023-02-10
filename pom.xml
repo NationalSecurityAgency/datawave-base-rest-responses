@@ -24,7 +24,7 @@
     <properties>
         <datawave.webservice.namespace>http://webservice.datawave/v1</datawave.webservice.namespace>
         <version.commons-lang3>3.12.0</version.commons-lang3>
-        <version.microservice.accumulo-utils>1.5-SNAPSHOT</version.microservice.accumulo-utils>
+        <version.microservice.accumulo-utils>1.6-SNAPSHOT</version.microservice.accumulo-utils>
         <version.microservice.common-utils>1.2-SNAPSHOT</version.microservice.common-utils>
         <version.powermock>2.0.0</version.powermock>
         <version.protostuff>1.6.2</version.protostuff>
