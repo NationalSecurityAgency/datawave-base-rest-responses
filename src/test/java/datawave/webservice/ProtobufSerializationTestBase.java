@@ -50,7 +50,7 @@ public class ProtobufSerializationTestBase {
             assertEquals(fieldValues[i], field(clazz, fieldNames[i]).get(reconstructed));
     }
     
-    protected <T extends Message<T>> T roundTrip(T message) throws Exception {
+    protected <T extends Message<T>> T roundTrip(T message) {
         byte[] bytes = toProtobufBytes(message);
         T response = message.cachedSchema().newMessage();
         ProtobufIOUtil.mergeFrom(bytes, response, message.cachedSchema());

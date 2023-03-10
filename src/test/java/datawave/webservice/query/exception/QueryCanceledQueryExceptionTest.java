@@ -1,7 +1,9 @@
 package datawave.webservice.query.exception;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class QueryCanceledQueryExceptionTest {
     
@@ -18,108 +20,108 @@ public class QueryCanceledQueryExceptionTest {
     @Test
     public void testEmptyConstructor() {
         qcqe = new QueryCanceledQueryException();
-        Assertions.assertEquals(500, qcqe.getStatusCode());
-        Assertions.assertEquals("500-1", qcqe.getErrorCode());
-        Assertions.assertNull(qcqe.getMessage());
-        Assertions.assertNull(qcqe.getLocalizedMessage());
+        assertEquals(500, qcqe.getStatusCode());
+        assertEquals("500-1", qcqe.getErrorCode());
+        assertNull(qcqe.getMessage());
+        assertNull(qcqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageConstructor() {
         qcqe = new QueryCanceledQueryException(message);
-        Assertions.assertEquals(500, qcqe.getStatusCode());
-        Assertions.assertEquals("500-1", qcqe.getErrorCode());
-        Assertions.assertEquals(message, qcqe.getMessage());
-        Assertions.assertEquals(message, qcqe.getLocalizedMessage());
+        assertEquals(500, qcqe.getStatusCode());
+        assertEquals("500-1", qcqe.getErrorCode());
+        assertEquals(message, qcqe.getMessage());
+        assertEquals(message, qcqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageThrowableConstructor() {
         qcqe = new QueryCanceledQueryException(message, throwable);
-        Assertions.assertEquals(500, qcqe.getStatusCode());
-        Assertions.assertEquals("500-1", qcqe.getErrorCode());
-        Assertions.assertEquals(message, qcqe.getMessage());
-        Assertions.assertEquals(message, qcqe.getLocalizedMessage());
+        assertEquals(500, qcqe.getStatusCode());
+        assertEquals("500-1", qcqe.getErrorCode());
+        assertEquals(message, qcqe.getMessage());
+        assertEquals(message, qcqe.getLocalizedMessage());
     }
     
     @Test
     public void testThrowableErrorCodeConstructor() {
         qcqe = new QueryCanceledQueryException(throwable, strErrCode);
-        Assertions.assertEquals(204, qcqe.getStatusCode());
-        Assertions.assertEquals("204-3", qcqe.getErrorCode());
-        Assertions.assertEquals(throwable.toString(), qcqe.getMessage());
-        Assertions.assertEquals(throwable.toString(), qcqe.getLocalizedMessage());
+        assertEquals(204, qcqe.getStatusCode());
+        assertEquals("204-3", qcqe.getErrorCode());
+        assertEquals(throwable.toString(), qcqe.getMessage());
+        assertEquals(throwable.toString(), qcqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeThrowableConstructor() {
         qcqe = new QueryCanceledQueryException(code, throwable);
-        Assertions.assertEquals(204, qcqe.getStatusCode());
-        Assertions.assertEquals("204-3", qcqe.getErrorCode());
-        Assertions.assertEquals(assertMsg2, qcqe.getMessage());
-        Assertions.assertEquals(assertMsg2, qcqe.getLocalizedMessage());
+        assertEquals(204, qcqe.getStatusCode());
+        assertEquals("204-3", qcqe.getErrorCode());
+        assertEquals(assertMsg2, qcqe.getMessage());
+        assertEquals(assertMsg2, qcqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeDebugMsgConstructor() {
         qcqe = new QueryCanceledQueryException(code, message);
-        Assertions.assertEquals(204, qcqe.getStatusCode());
-        Assertions.assertEquals("204-3", qcqe.getErrorCode());
-        Assertions.assertEquals(assertMsg, qcqe.getMessage());
-        Assertions.assertEquals(assertMsg, qcqe.getLocalizedMessage());
+        assertEquals(204, qcqe.getStatusCode());
+        assertEquals("204-3", qcqe.getErrorCode());
+        assertEquals(assertMsg, qcqe.getMessage());
+        assertEquals(assertMsg, qcqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeThrowableDebugMsgConstructor() {
         qcqe = new QueryCanceledQueryException(code, throwable, message);
-        Assertions.assertEquals(204, qcqe.getStatusCode());
-        Assertions.assertEquals("204-3", qcqe.getErrorCode());
-        Assertions.assertEquals(assertMsg, qcqe.getMessage());
-        Assertions.assertEquals(assertMsg, qcqe.getLocalizedMessage());
+        assertEquals(204, qcqe.getStatusCode());
+        assertEquals("204-3", qcqe.getErrorCode());
+        assertEquals(assertMsg, qcqe.getMessage());
+        assertEquals(assertMsg, qcqe.getLocalizedMessage());
     }
     
     @Test
     public void testDatawaveErrorCodeConstructor() {
         qcqe = new QueryCanceledQueryException(code);
-        Assertions.assertEquals(204, qcqe.getStatusCode());
-        Assertions.assertEquals("204-3", qcqe.getErrorCode());
-        Assertions.assertEquals(assertMsg2, qcqe.getMessage());
-        Assertions.assertEquals(assertMsg2, qcqe.getLocalizedMessage());
+        assertEquals(204, qcqe.getStatusCode());
+        assertEquals("204-3", qcqe.getErrorCode());
+        assertEquals(assertMsg2, qcqe.getMessage());
+        assertEquals(assertMsg2, qcqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageResponseStatus() {
         qcqe = new QueryCanceledQueryException(message, 204);
-        Assertions.assertEquals(204, qcqe.getStatusCode());
-        Assertions.assertEquals("204", qcqe.getErrorCode());
-        Assertions.assertEquals(message, qcqe.getMessage());
-        Assertions.assertEquals(message, qcqe.getLocalizedMessage());
+        assertEquals(204, qcqe.getStatusCode());
+        assertEquals("204", qcqe.getErrorCode());
+        assertEquals(message, qcqe.getMessage());
+        assertEquals(message, qcqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageThrowableErrorCode() {
         qcqe = new QueryCanceledQueryException(message, throwable, strErrCode);
-        Assertions.assertEquals(204, qcqe.getStatusCode());
-        Assertions.assertEquals("204-3", qcqe.getErrorCode());
-        Assertions.assertEquals(message, qcqe.getMessage());
-        Assertions.assertEquals(message, qcqe.getLocalizedMessage());
+        assertEquals(204, qcqe.getStatusCode());
+        assertEquals("204-3", qcqe.getErrorCode());
+        assertEquals(message, qcqe.getMessage());
+        assertEquals(message, qcqe.getLocalizedMessage());
     }
     
     @Test
     public void testMessageErrorCode() {
         qcqe = new QueryCanceledQueryException(message, strErrCode);
-        Assertions.assertEquals(204, qcqe.getStatusCode());
-        Assertions.assertEquals("204-3", qcqe.getErrorCode());
-        Assertions.assertEquals(message, qcqe.getMessage());
-        Assertions.assertEquals(message, qcqe.getLocalizedMessage());
+        assertEquals(204, qcqe.getStatusCode());
+        assertEquals("204-3", qcqe.getErrorCode());
+        assertEquals(message, qcqe.getMessage());
+        assertEquals(message, qcqe.getLocalizedMessage());
     }
     
     @Test
     public void testThrowable() {
         qcqe = new QueryCanceledQueryException(throwable);
-        Assertions.assertEquals(500, qcqe.getStatusCode());
-        Assertions.assertEquals("500-1", qcqe.getErrorCode());
-        Assertions.assertEquals(throwable.toString(), qcqe.getMessage());
-        Assertions.assertEquals(throwable.toString(), qcqe.getLocalizedMessage());
+        assertEquals(500, qcqe.getStatusCode());
+        assertEquals("500-1", qcqe.getErrorCode());
+        assertEquals(throwable.toString(), qcqe.getMessage());
+        assertEquals(throwable.toString(), qcqe.getLocalizedMessage());
     }
 }
