@@ -1,31 +1,31 @@
 package datawave.webservice;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.powermock.api.support.membermodification.MemberMatcher.field;
-import static org.powermock.api.support.membermodification.MemberMatcher.fields;
+import io.protostuff.LinkedBuffer;
+import io.protostuff.Message;
+import io.protostuff.ProtobufIOUtil;
+import org.junit.Before;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
 
-import io.protostuff.LinkedBuffer;
-import io.protostuff.Message;
-import io.protostuff.ProtobufIOUtil;
-import org.junit.jupiter.api.BeforeEach;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.powermock.api.support.membermodification.MemberMatcher.field;
+import static org.powermock.api.support.membermodification.MemberMatcher.fields;
 
 public class ProtobufSerializationTestBase {
     protected LinkedBuffer buffer;
     
-    @BeforeEach
+    @Before
     public void setUp() {
         buffer = LinkedBuffer.allocate(4096);
     }
     
     protected <T extends Message<T>> void testFieldNames(String[] fieldNames, Class<T> clazz) {
         Field[] fields = fields(clazz);
-        assertEquals(fieldNames.length, fields.length,
-                        "The number of fields in " + clazz.getName() + " has changed.  Please update " + getClass().getName() + ".");
+        assertEquals("The number of fields in " + clazz.getName() + " has changed.  Please update " + getClass().getName() + ".", fieldNames.length,
+                        fields.length);
         
         String[] actualFieldNames = new String[fields.length];
         for (int i = 0; i < fields.length; ++i)
@@ -33,7 +33,7 @@ public class ProtobufSerializationTestBase {
         
         Arrays.sort(fieldNames);
         Arrays.sort(actualFieldNames);
-        assertArrayEquals(fieldNames, actualFieldNames, "Serialization/deserialization of " + clazz.getName() + " failed.");
+        assertArrayEquals("Serialization/deserialization of " + clazz.getName() + " failed.", fieldNames, actualFieldNames);
     }
     
     protected <T extends Message<T>> void testRoundTrip(Class<T> clazz, String[] fieldNames, Object[] fieldValues) throws Exception {

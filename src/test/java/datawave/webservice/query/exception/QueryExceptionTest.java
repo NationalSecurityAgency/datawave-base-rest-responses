@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
 public class QueryExceptionTest {
     
     protected static final Logger log = LoggerFactory.getLogger(QueryExceptionTest.class);
@@ -29,14 +32,14 @@ public class QueryExceptionTest {
     public void testEmptyConstructor() {
         qe = new QueryException();
         
-        Assertions.assertEquals("500-1", qe.getErrorCode());
-        Assertions.assertEquals(500, qe.getStatusCode());
-        Assertions.assertNull(qe.getLocalizedMessage());
-        Assertions.assertNull(qe.getMessage());
-        Assertions.assertNull(qe.getCause());
+        assertEquals("500-1", qe.getErrorCode());
+        assertEquals(500, qe.getStatusCode());
+        assertNull(qe.getLocalizedMessage());
+        assertNull(qe.getMessage());
+        assertNull(qe.getCause());
         
         qe.setErrorCode("99999 of uptime.");
-        Assertions.assertEquals("99999 of uptime.", qe.getErrorCode());
+        assertEquals("99999 of uptime.", qe.getErrorCode());
     }
     
     /**
@@ -48,11 +51,11 @@ public class QueryExceptionTest {
     public void testMessageConstructor() {
         qe = new QueryException("message");
         
-        Assertions.assertEquals("500-1", qe.getErrorCode());
-        Assertions.assertEquals(500, qe.getStatusCode());
-        Assertions.assertEquals("message", qe.getLocalizedMessage());
-        Assertions.assertEquals("message", qe.getMessage());
-        Assertions.assertNull(qe.getCause());
+        assertEquals("500-1", qe.getErrorCode());
+        assertEquals(500, qe.getStatusCode());
+        assertEquals("message", qe.getLocalizedMessage());
+        assertEquals("message", qe.getMessage());
+        assertNull(qe.getCause());
     }
     
     /**
@@ -64,11 +67,11 @@ public class QueryExceptionTest {
     public void testMessageThrowableConstructor() {
         qe = new QueryException("message", throwable);
         
-        Assertions.assertEquals("500-1", qe.getErrorCode());
-        Assertions.assertEquals(500, qe.getStatusCode());
-        Assertions.assertEquals("message", qe.getLocalizedMessage());
-        Assertions.assertEquals("message", qe.getMessage());
-        Assertions.assertEquals("throws", qe.getCause().getMessage());
+        assertEquals("500-1", qe.getErrorCode());
+        assertEquals(500, qe.getStatusCode());
+        assertEquals("message", qe.getLocalizedMessage());
+        assertEquals("message", qe.getMessage());
+        assertEquals("throws", qe.getCause().getMessage());
     }
     
     /**
@@ -80,10 +83,10 @@ public class QueryExceptionTest {
     public void testThrowableErrorCodeConstructor() {
         qe = new QueryException(throwable, strErrCode);
         
-        Assertions.assertEquals("404-1", qe.getErrorCode());
-        Assertions.assertEquals(404, qe.getStatusCode());
-        Assertions.assertEquals(throwable.toString(), qe.getLocalizedMessage());
-        Assertions.assertEquals(throwable.toString(), qe.getMessage());
+        assertEquals("404-1", qe.getErrorCode());
+        assertEquals(404, qe.getStatusCode());
+        assertEquals(throwable.toString(), qe.getLocalizedMessage());
+        assertEquals(throwable.toString(), qe.getMessage());
     }
     
     /**
@@ -95,10 +98,10 @@ public class QueryExceptionTest {
     public void testDatawaveErrorCodeThrowableConstructor() {
         qe = new QueryException(code, throwable);
         
-        Assertions.assertEquals("500-50", qe.getErrorCode());
-        Assertions.assertEquals(500, qe.getStatusCode());
-        Assertions.assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getLocalizedMessage());
-        Assertions.assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getMessage());
+        assertEquals("500-50", qe.getErrorCode());
+        assertEquals(500, qe.getStatusCode());
+        assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getLocalizedMessage());
+        assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getMessage());
     }
     
     /**
@@ -110,10 +113,10 @@ public class QueryExceptionTest {
     public void testDatawaveErrorCodeDebugMsgConstructor() {
         qe = new QueryException(code, message);
         
-        Assertions.assertEquals("500-50", qe.getErrorCode());
-        Assertions.assertEquals(500, qe.getStatusCode());
-        Assertions.assertEquals(assertMsg, qe.getLocalizedMessage());
-        Assertions.assertEquals(assertMsg, qe.getMessage());
+        assertEquals("500-50", qe.getErrorCode());
+        assertEquals(500, qe.getStatusCode());
+        assertEquals(assertMsg, qe.getLocalizedMessage());
+        assertEquals(assertMsg, qe.getMessage());
     }
     
     /**
@@ -125,11 +128,11 @@ public class QueryExceptionTest {
     public void testDatawaveErrorCodeThrowableDebugMsgConstructor() {
         qe = new QueryException(code, throwable, message);
         
-        Assertions.assertEquals("500-50", qe.getErrorCode());
-        Assertions.assertEquals(500, qe.getStatusCode());
-        Assertions.assertEquals(assertMsg, qe.getLocalizedMessage());
-        Assertions.assertEquals(assertMsg, qe.getMessage());
-        Assertions.assertEquals("throws", qe.getCause().getMessage());
+        assertEquals("500-50", qe.getErrorCode());
+        assertEquals(500, qe.getStatusCode());
+        assertEquals(assertMsg, qe.getLocalizedMessage());
+        assertEquals(assertMsg, qe.getMessage());
+        assertEquals("throws", qe.getCause().getMessage());
         
         // addSuppressed not supported until 1.7. This package is marked to be 1.6 compatible
         // Throwable throwable_2 = new Throwable("throws2");
@@ -143,11 +146,11 @@ public class QueryExceptionTest {
         qe = new QueryException(code, throwable, message);
         
         QueryException bottom = qe.getBottomQueryException();
-        Assertions.assertEquals("500-50", bottom.getErrorCode());
-        Assertions.assertEquals(assertMsg, bottom.getMessage());
+        assertEquals("500-50", bottom.getErrorCode());
+        assertEquals(assertMsg, bottom.getMessage());
         
         List<QueryException> qeList = qe.getQueryExceptionsInStack();
-        Assertions.assertEquals(1, qeList.size());
+        assertEquals(1, qeList.size());
         
     }
     
@@ -160,10 +163,10 @@ public class QueryExceptionTest {
     public void testDatawaveErrorCodeConstructor() {
         qe = new QueryException(code);
         
-        Assertions.assertEquals("500-50", qe.getErrorCode());
-        Assertions.assertEquals(500, qe.getStatusCode());
-        Assertions.assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getLocalizedMessage());
-        Assertions.assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getMessage());
+        assertEquals("500-50", qe.getErrorCode());
+        assertEquals(500, qe.getStatusCode());
+        assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getLocalizedMessage());
+        assertEquals("Unable to retrieve Accumulo user authorizations.", qe.getMessage());
     }
     
     /**
@@ -175,10 +178,10 @@ public class QueryExceptionTest {
     public void testMessageResponseStatus() {
         qe = new QueryException(message, 202);
         
-        Assertions.assertEquals("202", qe.getErrorCode());
-        Assertions.assertEquals(202, qe.getStatusCode());
-        Assertions.assertEquals("message", qe.getLocalizedMessage());
-        Assertions.assertEquals("message", qe.getMessage());
+        assertEquals("202", qe.getErrorCode());
+        assertEquals(202, qe.getStatusCode());
+        assertEquals("message", qe.getLocalizedMessage());
+        assertEquals("message", qe.getMessage());
     }
     
     /**
@@ -190,11 +193,11 @@ public class QueryExceptionTest {
     public void testMessageThrowableErrorCode() {
         qe = new QueryException(message, throwable, strErrCode);
         
-        Assertions.assertEquals(strErrCode, qe.getErrorCode());
-        Assertions.assertEquals(404, qe.getStatusCode());
-        Assertions.assertEquals("message", qe.getLocalizedMessage());
-        Assertions.assertEquals("message", qe.getMessage());
-        Assertions.assertEquals("throws", qe.getCause().getMessage());
+        assertEquals(strErrCode, qe.getErrorCode());
+        assertEquals(404, qe.getStatusCode());
+        assertEquals("message", qe.getLocalizedMessage());
+        assertEquals("message", qe.getMessage());
+        assertEquals("throws", qe.getCause().getMessage());
     }
     
     /**
@@ -206,10 +209,10 @@ public class QueryExceptionTest {
     public void testMessageErrorCode() {
         qe = new QueryException(message, strErrCode);
         
-        Assertions.assertEquals(strErrCode, qe.getErrorCode());
-        Assertions.assertEquals(404, qe.getStatusCode());
-        Assertions.assertEquals("message", qe.getLocalizedMessage());
-        Assertions.assertEquals("message", qe.getMessage());
+        assertEquals(strErrCode, qe.getErrorCode());
+        assertEquals(404, qe.getStatusCode());
+        assertEquals("message", qe.getLocalizedMessage());
+        assertEquals("message", qe.getMessage());
     }
     
     /**
@@ -221,10 +224,10 @@ public class QueryExceptionTest {
     public void testThrowable() {
         qe = new QueryException(throwable);
         
-        Assertions.assertEquals("500-1", qe.getErrorCode());
-        Assertions.assertEquals(500, qe.getStatusCode());
-        Assertions.assertEquals(throwable.toString(), qe.getLocalizedMessage());
-        Assertions.assertEquals(throwable.toString(), qe.getMessage());
-        Assertions.assertEquals("throws", qe.getCause().getMessage());
+        assertEquals("500-1", qe.getErrorCode());
+        assertEquals(500, qe.getStatusCode());
+        assertEquals(throwable.toString(), qe.getLocalizedMessage());
+        assertEquals(throwable.toString(), qe.getMessage());
+        assertEquals("throws", qe.getCause().getMessage());
     }
 }
