@@ -1,15 +1,5 @@
 package datawave.security;
 
-import datawave.microservice.security.util.DnUtils;
-import datawave.security.authorization.DatawaveUserInfo;
-import datawave.webservice.HtmlProvider;
-import org.apache.commons.text.StringEscapeUtils;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
@@ -17,6 +7,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+import org.apache.commons.text.StringEscapeUtils;
+
+import datawave.microservice.security.util.DnUtils;
+import datawave.security.authorization.DatawaveUserInfo;
+import datawave.webservice.HtmlProvider;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)

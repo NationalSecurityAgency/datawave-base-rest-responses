@@ -8,7 +8,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 import datawave.webservice.query.exception.QueryExceptionType;
-
 import io.protostuff.Input;
 import io.protostuff.Message;
 import io.protostuff.Output;

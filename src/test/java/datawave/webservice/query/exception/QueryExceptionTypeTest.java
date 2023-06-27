@@ -1,7 +1,8 @@
 package datawave.webservice.query.exception;
 
-import datawave.webservice.ProtobufSerializationTestBase;
 import org.junit.Test;
+
+import datawave.webservice.ProtobufSerializationTestBase;
 
 public class QueryExceptionTypeTest extends ProtobufSerializationTestBase {
     @Test

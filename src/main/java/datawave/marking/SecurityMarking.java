@@ -2,9 +2,9 @@ package datawave.marking;
 
 import java.util.Map;
 
-import datawave.validation.ParameterValidator;
-
 import org.apache.accumulo.core.security.ColumnVisibility;
+
+import datawave.validation.ParameterValidator;
 
 public interface SecurityMarking extends ParameterValidator {
     

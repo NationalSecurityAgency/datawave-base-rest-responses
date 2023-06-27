@@ -1,18 +1,19 @@
 package datawave.webservice;
 
-import io.protostuff.LinkedBuffer;
-import io.protostuff.Message;
-import io.protostuff.ProtobufIOUtil;
-import org.junit.Before;
-
-import java.lang.reflect.Field;
-import java.util.Arrays;
-
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.powermock.api.support.membermodification.MemberMatcher.field;
 import static org.powermock.api.support.membermodification.MemberMatcher.fields;
+
+import java.lang.reflect.Field;
+import java.util.Arrays;
+
+import org.junit.Before;
+
+import io.protostuff.LinkedBuffer;
+import io.protostuff.Message;
+import io.protostuff.ProtobufIOUtil;
 
 public class ProtobufSerializationTestBase {
     protected LinkedBuffer buffer;
