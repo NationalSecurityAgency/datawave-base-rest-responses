@@ -30,8 +30,11 @@ jobs:
           ${{ runner.os }}-maven-format-
           ${{ runner.os }}-maven-
     - name: Format code
+      env:
+        USER_NAME: ${{ secrets.USER_NAME }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
-        mvn -V -B -e clean formatter:format sortpom:sort -Pautoformat
+        mvn -s $GITHUB_WORKSPACE/.github/workflows/settings.xml -V -B -e clean formatter:format sortpom:sort -Pautoformat
         git status
         git diff-index --quiet HEAD || (echo "Error! There are modified files after formatting." && false)
       env:
@@ -56,6 +59,8 @@ jobs:
           ${{ runner.os }}-maven-format-
           ${{ runner.os }}-maven-
     - name: Build and Run Unit Tests
-      run: mvn -V -B -e -Ddist clean verify
+      run: mvn -s $GITHUB_WORKSPACE/.github/workflows/settings.xml -V -B -e -Ddist clean verify
       env:
         MAVEN_OPTS: "-Dhttps.protocols=TLSv1.2 -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Djava.awt.headless=true"
+        USER_NAME: ${{ secrets.USER_NAME }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
