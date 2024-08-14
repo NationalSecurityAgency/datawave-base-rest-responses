@@ -221,6 +221,9 @@ public enum DatawaveErrorCode {
     BEGIN_DATE_AFTER_END_DATE(400, 42, "The begin date occurs after the end date."),
     INVALID_MAX_RESULTS_OVERRIDE(400, 43, "Invalid max results override value."),
     INVALID_MAX_CONCURRENT_TASKS_OVERRIDE(400, 44, "Invalid max concurrent tasks override value."),
+    WRONG_NUMBER_OF_ARGUMENTS(400, 45, "Wrong number of arguments."),
+    ARGUMENTDESCRIPTOR_NODE_FOR_FUNCTION(400, 46, "Calling getArgumentDescriptor with node for a function."),
+    
     // 401 Unauthorized
     QUERY_OWNER_MISMATCH(401, 1, "Current user does not match user that defined query."),
     JOB_EXECUTION_UNAUTHORIZED(401, 2, "User not authorized to run this job."),
