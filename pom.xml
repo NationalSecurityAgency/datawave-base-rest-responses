@@ -25,9 +25,9 @@
     <properties>
         <datawave.webservice.namespace>http://webservice.datawave.nsa/v1</datawave.webservice.namespace>
         <version.commons-lang3>3.12.0</version.commons-lang3>
+        <version.datawave.accumulo-utils>4.0.0</version.datawave.accumulo-utils>
+        <version.datawave.common-utils>3.0.0</version.datawave.common-utils>
         <version.jaxb>2.3.3</version.jaxb>
-        <version.microservice.accumulo-utils>4.0.0</version.microservice.accumulo-utils>
-        <version.microservice.common-utils>3.0.0</version.microservice.common-utils>
         <version.powermock>2.0.4</version.powermock>
         <version.protobuf>2.5.0</version.protobuf>
         <version.protostuff>1.6.2</version.protostuff>
@@ -48,12 +48,12 @@
             <dependency>
                 <groupId>gov.nsa.datawave.microservice</groupId>
                 <artifactId>accumulo-utils</artifactId>
-                <version>${version.microservice.accumulo-utils}</version>
+                <version>${version.datawave.accumulo-utils}</version>
             </dependency>
             <dependency>
                 <groupId>gov.nsa.datawave.microservice</groupId>
                 <artifactId>common-utils</artifactId>
-                <version>${version.microservice.common-utils}</version>
+                <version>${version.datawave.common-utils}</version>
             </dependency>
             <dependency>
                 <groupId>io.protostuff</groupId>
