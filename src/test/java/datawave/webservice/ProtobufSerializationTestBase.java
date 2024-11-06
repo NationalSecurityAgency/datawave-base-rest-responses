@@ -42,7 +42,7 @@ public class ProtobufSerializationTestBase {
         assertNotNull(fieldValues);
         assertEquals(fieldNames.length, fieldValues.length);
         
-        T original = clazz.newInstance();
+        T original = clazz.getDeclaredConstructor().newInstance();
         for (int i = 0; i < fieldNames.length; ++i)
             field(clazz, fieldNames[i]).set(original, fieldValues[i]);
         
