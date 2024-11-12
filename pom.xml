@@ -24,6 +24,8 @@
     </scm>
     <properties>
         <datawave.webservice.namespace>http://webservice.datawave.nsa/v1</datawave.webservice.namespace>
+        <version.accumulo>2.1.1</version.accumulo>
+        <version.commons-collections4>4.0</version.commons-collections4>
         <version.commons-lang3>3.12.0</version.commons-lang3>
         <version.datawave.accumulo-utils>4.0.0</version.datawave.accumulo-utils>
         <version.datawave.common-utils>3.0.0</version.datawave.common-utils>
