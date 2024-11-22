@@ -29,7 +29,7 @@
         <version.datawave.common-utils>3.0.0</version.datawave.common-utils>
         <version.jaxb>2.3.3</version.jaxb>
         <version.powermock>2.0.4</version.powermock>
-        <version.protobuf>2.5.0</version.protobuf>
+        <version.protobuf>3.16.3</version.protobuf>
         <version.protostuff>1.6.2</version.protostuff>
         <version.slf4j>1.7.29</version.slf4j>
     </properties>
