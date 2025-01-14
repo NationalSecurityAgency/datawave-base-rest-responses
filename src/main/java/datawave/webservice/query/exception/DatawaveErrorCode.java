@@ -170,6 +170,7 @@ public enum DatawaveErrorCode {
     OOZIE_JOB_START_ERROR(500, 160, "Error starting Oozie job."),
     QUERY_PLAN_ERROR(500, 161, "Error retrieving plan for query."),
     QUERY_PREDICTIONS_ERROR(500, 162, "Error retrieving predictions for query."),
+    QUERY_VALIDATION_ERROR(500, 163, "Error validating query."),
     // 204 No Content
     NO_QUERIES_FOUND(204, 1, "No queries found for user."),
     RESULTS_NOT_SENT(204, 2, "Results not sent."),
