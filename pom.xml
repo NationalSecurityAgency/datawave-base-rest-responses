@@ -4,11 +4,11 @@
     <parent>
         <groupId>gov.nsa.datawave.microservice</groupId>
         <artifactId>datawave-microservice-parent</artifactId>
-        <version>4.0.0</version>
+        <version>4.0.1-depfix</version>
         <relativePath>../../microservices/microservice-parent/pom.xml</relativePath>
     </parent>
     <artifactId>base-rest-responses</artifactId>
-    <version>4.0.2-SNAPSHOT</version>
+    <version>4.0.2-depfix</version>
     <url>https://code.nsa.gov/datawave-base-rest-responses</url>
     <licenses>
         <license>
@@ -27,9 +27,9 @@
         <version.accumulo>2.1.2</version.accumulo>
         <version.commons-collections4>4.0</version.commons-collections4>
         <version.commons-lang3>3.12.0</version.commons-lang3>
+        <version.datawave.accumulo-utils>4.0.2-depfix</version.datawave.accumulo-utils>
         <version.datawave.accumulo-utils>4.0.0</version.datawave.accumulo-utils>
-        <version.datawave.accumulo-utils>4.0.0</version.datawave.accumulo-utils>
-        <version.datawave.common-utils>3.0.0</version.datawave.common-utils>
+        <version.datawave.common-utils>3.0.1-depfix</version.datawave.common-utils>
         <version.datawave.common-utils>3.0.0</version.datawave.common-utils>
         <version.guava>28.1-jre</version.guava>
         <version.jaxb>2.3.3</version.jaxb>
