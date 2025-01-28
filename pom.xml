@@ -8,7 +8,7 @@
         <relativePath>../../microservices/microservice-parent/pom.xml</relativePath>
     </parent>
     <artifactId>base-rest-responses</artifactId>
-    <version>4.0.2-accumulo4</version>
+    <version>4.0.2-accumulo4-1</version>
     <url>https://code.nsa.gov/datawave-base-rest-responses</url>
     <licenses>
         <license>
@@ -26,7 +26,7 @@
         <datawave.webservice.namespace>http://webservice.datawave.nsa/v1</datawave.webservice.namespace>
         <version.commons-lang3>3.12.0</version.commons-lang3>
         <version.datawave.accumulo-utils>5.1.0-accumulo4</version.datawave.accumulo-utils>
-        <version.datawave.common-utils>3.0.0</version.datawave.common-utils>
+        <version.datawave.common-utils>3.0.1-accumulo4</version.datawave.common-utils>
         <version.jaxb>2.3.3</version.jaxb>
         <version.powermock>2.0.4</version.powermock>
         <version.protobuf>2.5.0</version.protobuf>
