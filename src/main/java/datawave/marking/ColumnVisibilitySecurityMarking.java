@@ -12,6 +12,7 @@ import javax.xml.bind.annotation.XmlAccessorOrder;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 
+import org.apache.accumulo.access.AccessExpression;
 import org.apache.accumulo.core.security.ColumnVisibility;
 
 import com.google.common.base.Preconditions;
@@ -94,7 +95,7 @@ public class ColumnVisibilitySecurityMarking implements SecurityMarking {
         if (null == this.columnVisibility) {
             return null;
         }
-        return new String(toColumnVisibility().flatten(), UTF_8);
+        return AccessExpression.of(columnVisibility, true).getExpression();
     }
     
     public void clear() {
