@@ -95,7 +95,7 @@ public class ColumnVisibilitySecurityMarking implements SecurityMarking {
         if (null == this.columnVisibility) {
             return null;
         }
-        return AccessExpression.of(columnVisibility, true).getExpression();
+        return AccessExpression.of(columnVisibility).getExpression();
     }
     
     public void clear() {
